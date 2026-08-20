@@ -1,8 +1,8 @@
 """
-Módulo que contiene la clase Arbol para la representación
-del juego Tres en Raya mediante una matriz 3x3 de Nodos.
-
-Autor: [Tu nombre]
+Autor: Charles Jesus Morales Velasco
+Titulo: Módulo que contiene la clase Arbol para la representación
+del juego Tres en Raya mediante una matriz 3x3 de Nodos. 
+Version: 1.0.0
 Fecha: 2026
 """
 
