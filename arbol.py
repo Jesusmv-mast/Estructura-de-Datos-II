@@ -1,7 +1,6 @@
 """
 Autor: Charles Jesus Morales Velasco
 Titulo: Clase Arbol - Tablero Tres en Raya
-del juego Tres en Raya mediante una matriz 3x3 de Nodos. 
 Version: 1.0.0
 Fecha: 2026
 """

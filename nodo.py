@@ -1,9 +1,8 @@
 """
-Módulo que contiene la clase Nodo para la representación
-del juego Tres en Raya mediante una estructura de árbol binario.
-
-Autor: [Tu nombre]
-Fecha: 2026
+autor: Charles Jesus Morales Velasco
+titulo: Clase Nodo - Representación de un nodo en un árbol binario
+version: 1.0.0
+fecha: 2026
 """
 
 
@@ -22,15 +21,13 @@ class Nodo:
 
         Args:
             elemento: Valor del nodo. Puede ser 'X', 'O' o None.
-                      Por defecto es None (celda vacía).
+                Por defecto es None (celda vacía).
         """
         self._elemento = elemento
         self._hijo_izquierdo = None
         self._hijo_derecho = None
 
-    # -------------------------
     # Getters
-    # -------------------------
 
     def get_elemento(self):
         """
@@ -59,9 +56,7 @@ class Nodo:
         """
         return self._hijo_derecho
 
-    # -------------------------
     # Setters
-    # -------------------------
 
     def set_elemento(self, elemento):
         """
@@ -112,9 +107,7 @@ class Nodo:
             )
         self._hijo_derecho = nodo
 
-    # -------------------------
     # Métodos auxiliares
-    # -------------------------
 
     def tiene_hijo_izquierdo(self):
         """
@@ -166,10 +159,7 @@ class Nodo:
             f"hijo_derecho={self._hijo_derecho!r})"
         )
 
-
-# -------------------------
 # Bloque de prueba rápida
-# -------------------------
 
 if __name__ == "__main__":
     # Crear nodos individuales
