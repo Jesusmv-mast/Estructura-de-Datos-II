@@ -1,6 +1,6 @@
 """
 Autor: Charles Jesus Morales Velasco
-Titulo: Módulo que contiene la clase Arbol para la representación
+Titulo: Clase Arbol - Tablero Tres en Raya
 del juego Tres en Raya mediante una matriz 3x3 de Nodos. 
 Version: 1.0.0
 Fecha: 2026
@@ -29,9 +29,9 @@ class Arbol:
         self._raiz = None
         self._matriz = self._crear_matriz()
 
-    # -------------------------
+
     # Métodos privados
-    # -------------------------
+
 
     def _crear_matriz(self):
         """
@@ -46,9 +46,9 @@ class Arbol:
             matriz.append(fila)
         return matriz
 
-    # -------------------------
+
     # Getters
-    # -------------------------
+
 
     def get_raiz(self):
         """
@@ -98,9 +98,8 @@ class Arbol:
         """
         return self.get_nodo(fila, columna).get_elemento()
 
-    # -------------------------
     # Setters
-    # -------------------------
+
 
     def set_raiz(self, nodo):
         """
@@ -141,9 +140,9 @@ class Arbol:
             )
         nodo.set_elemento(valor)
 
-    # -------------------------
+
     # Métodos de validación
-    # -------------------------
+
 
     def _validar_posicion(self, fila, columna):
         """
@@ -167,9 +166,9 @@ class Arbol:
                 f"{self.COLUMNAS - 1}."
             )
 
-    # -------------------------
+
     # Métodos del juego
-    # -------------------------
+
 
     def esta_vacia(self, fila, columna):
         """
@@ -236,9 +235,8 @@ class Arbol:
         return "\n".join(filas)
 
 
-# -------------------------
 # Bloque de prueba rápida
-# -------------------------
+
 
 if __name__ == "__main__":
     print("=== Prueba de la clase Arbol ===")
