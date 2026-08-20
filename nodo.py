@@ -1,8 +1,7 @@
 """
-Módulo que contiene la clase Nodo para la representación
-del juego Tres en Raya mediante una estructura de árbol binario.
-
-Autor: [Tu nombre]
+Autor: Charles Jesus Morales Velasco
+Titulo: Clase Nodo para el juego tres en raya
+Version: 1.0.0
 Fecha: 2026
 """
 
@@ -22,15 +21,15 @@ class Nodo:
 
         Args:
             elemento: Valor del nodo. Puede ser 'X', 'O' o None.
-                      Por defecto es None (celda vacía).
+                    Por defecto es None (celda vacía).
         """
         self._elemento = elemento
         self._hijo_izquierdo = None
         self._hijo_derecho = None
 
-    # -------------------------
+
     # Getters
-    # -------------------------
+
 
     def get_elemento(self):
         """
@@ -59,9 +58,9 @@ class Nodo:
         """
         return self._hijo_derecho
 
-    # -------------------------
+
     # Setters
-    # -------------------------
+
 
     def set_elemento(self, elemento):
         """
@@ -112,9 +111,7 @@ class Nodo:
             )
         self._hijo_derecho = nodo
 
-    # -------------------------
     # Métodos auxiliares
-    # -------------------------
 
     def tiene_hijo_izquierdo(self):
         """
@@ -167,9 +164,9 @@ class Nodo:
         )
 
 
-# -------------------------
+
 # Bloque de prueba rápida
-# -------------------------
+
 
 if __name__ == "__main__":
     # Crear nodos individuales
@@ -189,10 +186,10 @@ if __name__ == "__main__":
     print(f"Hijo derecho:   {nodo_raiz.get_hijo_derecho()}")
     print(f"¿Es hoja?:      {nodo_raiz.es_hoja()}")
     print(f"¿Nodo izq es hoja?: {nodo_izq.es_hoja()}")
-
+    print(f"¿Nodo der es hoja?: {nodo_der.es_hoja()}")
     # Probar validación del setter
     print("\n=== Prueba de validación ===")
     try:
         nodo_raiz.set_elemento('Z')
     except ValueError as e:
-        print(f"Error esperado: {e}")
+        print(f"Error: {e}")
