@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Árbol de Expresión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <h1>Sistema de Árbol de Expresión</h1>
+    <p>Notación Infija → Árbol → Notación Posfija</p>
+
+    <hr>
+
+    <!-- Formulario de carga -->
+    <h2>Cargar expresión</h2>
+    <form action="/cargar" method="POST">
+        <input type="text" name="expresion" placeholder="Ej: 3 + 5 * 2" required>
+        <button type="submit">Cargar</button>
+    </form>
+
+    {% if error %}
+        <p class="error">✗ {{ error }}</p>
+    {% endif %}
+
+    <hr>
+
+    <!-- Lista de expresiones cargadas -->
+    <h2>Expresiones cargadas</h2>
+
+    {% if arboles %}
+        {% for arbol in arboles %}
+        {% set i = loop.index0 %}
+            <div class="arbol">
+                <p><strong>[{{ i }}] Infija:</strong> {{ arbol.infija }}</p>
+                <p><strong>Posfija:</strong> {{ arbol.posfija }}</p>
+                <p><strong>Resultado:</strong> {{ arbol.resultado }}</p>
+
+                <div class="acciones">
+                    <button onclick="toggleArbol({ i })">Ver árbol</button>
+                    <a href="/eliminar/{{ i }}">Eliminar</a>
+                </div>
+
+                <div id="arbol-img-{{ i }}" class="arbol-img" style="display:none;">
+                    <img src="/graficar/{{ i }}" alt="Árbol de {{ arbol.infija }}">
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No hay expresiones cargadas aún.</p>
+    {% endif %}
+
+    <script>
+        function toggleArbol(indice) {
+            const div = document.getElementById("arbol-img-" + indice);
+            div.style.display = div.style.display === "none" ? "block" : "none";
+        }
+    </script>
+
+</body>
+</html>

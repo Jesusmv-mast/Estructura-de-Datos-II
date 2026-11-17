@@ -134,7 +134,10 @@ class Nodo:
         Returns:
             True si no tiene hijos, False en caso contrario.
         """
-        return not self.tiene_hijo_izquierdo() and not self.tiene_hijo_derecho()
+        return (
+            not self.tiene_hijo_izquierdo()
+            and not self.tiene_hijo_derecho()
+        )
 
     def __str__(self):
         """
@@ -159,7 +162,9 @@ class Nodo:
             f"hijo_derecho={self._hijo_derecho!r})"
         )
 
+
 # Bloque de prueba rápida
+
 
 if __name__ == "__main__":
     # Crear nodos individuales
@@ -179,6 +184,7 @@ if __name__ == "__main__":
     print(f"Hijo derecho:   {nodo_raiz.get_hijo_derecho()}")
     print(f"¿Es hoja?:      {nodo_raiz.es_hoja()}")
     print(f"¿Nodo izq es hoja?: {nodo_izq.es_hoja()}")
+    print(f"¿Nodo der es hoja?: {nodo_der.es_hoja()}")
 
     # Probar validación del setter
     print("\n=== Prueba de validación ===")

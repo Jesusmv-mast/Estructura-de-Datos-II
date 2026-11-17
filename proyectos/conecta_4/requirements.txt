@@ -1,0 +1,4 @@
+ttkbootstrap
+scikit-learn
+joblib
+pytest
